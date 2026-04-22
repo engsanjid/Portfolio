@@ -20,7 +20,7 @@
 A modern, responsive portfolio website showcasing my journey as a **Junior Full Stack Web Developer**. Built with cutting-edge technologies and featuring a sleek dark theme with neon accents.
 
 ### 🎯 **Live Demo**
-🔗 **[View Portfolio](https://your-portfolio-link.com)**
+🔗 **[View Portfolio](https://sanjid-portfolio.vercel.app/)**
 
 ---
 
