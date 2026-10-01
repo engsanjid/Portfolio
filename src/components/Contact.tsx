@@ -106,7 +106,7 @@ const handleSubmit = async (e: FormEvent) => {
 
       <div className="max-w-6xl mx-auto px-6 relative">
         <div ref={headingRef} className="reveal text-center mb-16">
-          <span className="section-tag">04 — Get in Touch</span>
+          <span className="section-tag">05 — Get in Touch</span>
           <h2 className="section-title mt-2">
             Let's <span className="gradient-text">Connect</span>
           </h2>
@@ -181,7 +181,7 @@ const handleSubmit = async (e: FormEvent) => {
                 </span>
               </div>
               <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                Seeking Full Stack Developer role. Open for collaborative opportunities. Response within 24 hours.
+                Seeking Frontend Developer role. Open for collaborative opportunities. Response within 24 hours.
               </p>
             </div>
           </div>

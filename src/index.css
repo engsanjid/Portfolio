@@ -28,9 +28,8 @@
 }
 
 html {
-   overflow-x: hidden;
+  overflow-x: hidden;
   scroll-behavior: smooth;
-  cursor: none;
 }
 
 body {
@@ -41,20 +40,9 @@ body {
   line-height: 1.6;
 }
 
-@media (hover: none), (pointer: coarse) {
-  html, a, button, input, textarea, [role="button"] {
-    cursor: auto;
-  }
-
-  .cursor-inner,
-  .cursor-outer {
-    display: none !important;
-  }
-}
-
-/* Hide default cursor on interactive elements too */
-a, button, input, textarea, [role="button"] {
-  cursor: none;
+/* Ensure interactive elements have standard pointer cursor */
+a, button, [role="button"] {
+  cursor: pointer;
 }
 
 /* ===== Scrollbar ===== */
@@ -452,7 +440,7 @@ a, button, input, textarea, [role="button"] {
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
-  cursor: none;
+  cursor: pointer;
 }
 
 .btn-primary::before {
@@ -462,6 +450,7 @@ a, button, input, textarea, [role="button"] {
   background: linear-gradient(135deg, var(--cyan), var(--purple));
   opacity: 0;
   transition: opacity 0.3s;
+  pointer-events: none;
 }
 
 .btn-primary:hover {
@@ -488,7 +477,7 @@ a, button, input, textarea, [role="button"] {
   align-items: center;
   gap: 8px;
   transition: all 0.3s;
-  cursor: none;
+  cursor: pointer;
   min-width: 0;
 }
 
@@ -542,6 +531,7 @@ section {
   background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), rgba(176, 0, 255, 0.05));
   opacity: 0;
   transition: opacity 0.4s;
+  pointer-events: none;
 }
 
 .project-card:hover {
@@ -590,7 +580,7 @@ section {
   font-size: 0.95rem;
   transition: border-color 0.3s, box-shadow 0.3s;
   outline: none;
-  cursor: none;
+  cursor: text;
 }
 
 .form-input:focus {
@@ -710,4 +700,20 @@ section {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--cyan), var(--purple), transparent);
   opacity: 0.3;
+}
+
+/* ===== FADE IN ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

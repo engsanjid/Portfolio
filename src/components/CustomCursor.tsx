@@ -39,26 +39,27 @@ export default function CustomCursor() {
 
     rafId = requestAnimationFrame(animate);
 
-    const onEnter = () => setHovered(true);
-    const onLeave = () => setHovered(false);
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (
+        target &&
+        target.closest(
+          'a, button, input, textarea, [role="button"], .project-card, .stat-card, .glass-card, .cursor-pointer, [data-interactive="true"]'
+        )
+      ) {
+        setHovered(true);
+      } else {
+        setHovered(false);
+      }
+    };
 
-    const interactives = document.querySelectorAll(
-      'a, button, input, textarea, [role="button"], .project-card, .stat-card, .glass-card'
-    );
-    interactives.forEach((el) => {
-      el.addEventListener('mouseenter', onEnter);
-      el.addEventListener('mouseleave', onLeave);
-    });
-
+    window.addEventListener('mouseover', handleMouseOver);
     window.addEventListener('mousemove', onMove);
 
     return () => {
       cancelAnimationFrame(rafId);
       window.removeEventListener('mousemove', onMove);
-      interactives.forEach((el) => {
-        el.removeEventListener('mouseenter', onEnter);
-        el.removeEventListener('mouseleave', onLeave);
-      });
+      window.removeEventListener('mouseover', handleMouseOver);
     };
   }, []);
 

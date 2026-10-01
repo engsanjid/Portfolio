@@ -5,6 +5,7 @@ const NAV_LINKS = [
   { label: 'About',    href: '#about' },
   { label: 'Skills',   href: '#skills' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Clients',  href: '#clients' },
   { label: 'Contact',  href: '#contact' },
 ];
 
@@ -17,7 +18,7 @@ export default function Navigation() {
     const onScroll = () => {
       setScrolled(window.scrollY > 40);
 
-      const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects', 'clients', 'contact'];
       for (const id of sections.reverse()) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 120) {
